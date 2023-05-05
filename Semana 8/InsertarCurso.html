@@ -70,7 +70,7 @@
   <script>
 
     function captura(){
-
+           
         var formulario = document.getElementById('formulario');
         var nombre = document.getElementById("nombre").value;
         var descripcion= document.getElementById("descripcion").value;
@@ -104,21 +104,17 @@
                   
         }
         if (nombre!="" && descripcion!= "" && tiempo!= "" && usuario!="") {
-                    
+                    /*console.log(nombre +" "+ descripcion+" "+ tiempo +" "+ usuario);*/
                     document.getElementById("nombre").value="";
                     document.getElementById("descripcion").value="";
                     document.getElementById("tiempo").value="";
                     document.getElementById("usuario").value="";    
-                    
-                    formulario.addEventListener('submit', function(e){
-                    alert(nombre +" " + descripcion +" "+ tiempo +" " +usuario);
-                    e.preventDefault();
-                    })
+            
 
                     fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarCursos.php",
                     {
                     method:'POST',
-                   body: JSON.stringify(datosenviar)
+                     body: JSON.stringify(datosenviar)
                     }
                     )
                    //url de peticion  de datos
@@ -129,7 +125,14 @@
                    })
        
                    .catch(console.log)//muestra 
+
+                   formulario.addEventListener('submit', function(e){
+                    alert(nombre +" " + descripcion +" "+ tiempo +" " +usuario);
+                    e.preventDefault();
+                    })
+                
           }
+           
         }  
         //apis/InsertarCursos.php
         //{ "nombre":"React 22", "descripcion":"React Junior", "tiempo":"10 Meses", "usuario":"profesor Mario" }
