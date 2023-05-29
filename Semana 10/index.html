@@ -14,7 +14,12 @@
     <script>
         
         $(document).ready(function () {
-            alert("Exito");
+            $("p").click(function (e) { 
+                e.preventDefault();
+                alert("click en p")
+                $(this).addClass("bg-danger");
+                
+            });
         });
 
     </script>
@@ -27,7 +32,8 @@
     
   </header>
   <main>
-
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum quia consequatur sapiente, iste reiciendis laudantium quod placeat cum hic voluptate cupiditate, sint at ratione iusto sit, qui minus veniam voluptatem.
+    Ratione libero accusantium aperiam corporis eius voluptatum optio iure provident odio nesciunt quos iste reprehenderit nostrum numquam, impedit possimus voluptatibus inventore sit error quisquam et, veritatis recusandae asperiores deleniti. Alias.</p>
   </main>
   <footer>
     <!-- place footer here -->
